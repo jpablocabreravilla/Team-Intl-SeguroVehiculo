@@ -16,7 +16,8 @@ namespace WebApp_SeguroVehiculo.Models
         public string LastName { get; set; }
         public string DocType { get; set; }
         public int DocNum { get; set; }
-        public DateTime BirthDate { get; set; }
+        //public DateTime BirthDate { get; set; }
+        public string BirthDate { get; set; }
         public string City { get; set; }
 
 

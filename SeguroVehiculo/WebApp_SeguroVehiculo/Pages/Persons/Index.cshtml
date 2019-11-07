@@ -2,13 +2,10 @@
 @model WebApp_SeguroVehiculo.Pages.Persons.IndexModel
 @{
 }
-<nav>
-    <div class="nav-wrapper  ">
-        <center> <h3 class="brand-logo center">PERSONS</h3> </center>
-        
-    </div>
-</nav>
-<br /> <!-- ESPACIO -->
+
+<center><h1>Customers</h1></center>
+<br />
+
 <form method="post">
     <table class="table">
         <thead class="thead-light">
@@ -24,34 +21,36 @@
             </tr>
         <thead>
         <tbody>
-            @foreach (var item in Model.Persons)  
+            @foreach (var item in Model.Persons)
             {
-            <tr>
-                <td>@item.Id        </td>
-                <td>@item.Name      </td>
-                <td>@item.LastName  </td>
-                <td>@item.DocType   </td>
-                <td>@item.DocNum    </td>
-                <td>@item.BirthDate </td>
-                <td>@item.City     </td>
-                <td>
-                    <a class="btn btn-outline-success"
-                       asp-page="Edit"
-                       asp-route-id="@item.Id">
-                        Edit
-                    </a>
-                </td>
-                <td>
-                    <button type="submit"
-                            class="btn btn-outline-danger"
-                            asp-page-handler="delete"
-                            asp-route-id="@item.Id">
-                        Delete
-                    </button>
-                </td>
-            </tr>
+                <tr>
+                    <td>@item.Id        </td>
+                    <td>@item.Name      </td>
+                    <td>@item.LastName  </td>
+                    <td>@item.DocType   </td>
+                    <td>@item.DocNum    </td>
+                    <td>@item.BirthDate </td>
+                    <td>@item.City     </td>
+                    <td>
+                        <a class="btn btn-outline-success"
+                           asp-page="Edit"
+                           asp-route-id="@item.Id">
+                            Edit
+                        </a>
+                    </td>
+                    <td>
+                        <button type="submit"
+                                class="btn btn-outline-danger"
+                                asp-page-handler="delete"
+                                asp-route-id="@item.Id">
+                            Delete
+                        </button>
+                    </td>
+                </tr>
             }
         </tbody>
     </table>
 </form>
-<a asp-page="Add" class="btn btn-info"> Create new Person </a>
+<a asp-page="Add" class="btn btn-outline-primary">Create new Customer</a>
+
+<!-- Realizar Return To Home -->

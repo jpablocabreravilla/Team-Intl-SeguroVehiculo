@@ -17,6 +17,7 @@ namespace WebApp_SeguroVehiculo.Data
               LastName = "pablo" ,
               DocType = "CC",
               DocNum = 123,
+              BirthDate = "15/08/1994",
               City = "Bello"
             });
             Persons.Add(new Person
@@ -25,6 +26,7 @@ namespace WebApp_SeguroVehiculo.Data
                 LastName = "acevedo",
                 DocType = "CC",
                 DocNum = 987,
+                BirthDate = "30/11/1995",
                 City = "rio negro"
             });
             Persons.Add(new Person
@@ -33,8 +35,14 @@ namespace WebApp_SeguroVehiculo.Data
                 LastName = "cabrera",
                 DocType = "TI",
                 DocNum = 467,
+                BirthDate = "2/02/1998",
                 City = "Medellin"
             });
+        }
+
+        internal void AddPerson(Person person)
+        {
+            Persons.Add(person);
         }
 
         internal void DeletePerson(Guid id)
