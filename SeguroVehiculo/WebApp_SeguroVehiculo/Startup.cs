@@ -34,19 +34,15 @@ namespace WebApp_SeguroVehiculo
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
-            services.AddSingleton<PersonStore>();
+           // services.AddSingleton<PersonStore>();
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
-			services.AddDbContext<SVContext>(
-			opt => opt.UseSqlServer(Configuration.GetConnectionString("BDteamseguros1")));
-			/*sqlServerOptionsAction: sqlOptions =>
-			{
-				sqlOptions.EnableRetryOnFailure(
-				maxRetryCount: 5,
-				maxRetryDelay: TimeSpan.FromSeconds(10),
-				errorNumbersToAdd: null);
-			}));  */
+			services.AddScoped<PersonStore>();
+
+			services.AddDbContext<SVContext>(opt =>
+			opt.UseSqlServer(Configuration.GetConnectionString("ConecctionSQL")));
+
 
 		}
 

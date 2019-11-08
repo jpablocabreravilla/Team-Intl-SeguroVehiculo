@@ -8,36 +8,13 @@ namespace WebApp_SeguroVehiculo.Data
 {
     public class PersonStore 
     {
-        public List<Person> Persons { get; set; } = new List<Person>();
-        public PersonStore()
+		//public List<Person> Persons { get; set; } = new List<Person>();
+
+		public SVContext Context { get; set; }
+
+		public PersonStore(SVContext context)
         {
-            Persons.Add(new Person
-            {
-             Name = "juan" ,
-              LastName = "pablo" ,
-              DocType = "CC",
-              DocNum = 123,
-              BirthDate = "15/08/1994",
-              City = "Bello"
-            });
-            Persons.Add(new Person
-            {
-                Name = "eliza",
-                LastName = "acevedo",
-                DocType = "CC",
-                DocNum = 987,
-                BirthDate = "30/11/1995",
-                City = "rio negro"
-            });
-            Persons.Add(new Person
-            {
-                Name = "miguel",
-                LastName = "cabrera",
-                DocType = "TI",
-                DocNum = 467,
-                BirthDate = "2/02/1998",
-                City = "Medellin"
-            });
+			Context = context;
         }
 
         internal void EditPerson(Person person)
@@ -50,27 +27,32 @@ namespace WebApp_SeguroVehiculo.Data
             currentperson.DocType = person.DocType;
             currentperson.BirthDate = person.BirthDate;
             currentperson.City = person.City;
-        }
+			Context.Person.Update(currentperson);
+			Context.SaveChanges();
 
-        internal Person GetPersonById(Guid id)
+		}
+
+		internal Person GetPersonById(Guid id)
         {
-            return Persons.FirstOrDefault(x => x.Id == id);
+            return Context.Person.FirstOrDefault(x => x.Id == id);
         }
 
         internal void AddPerson(Person person)
         {
-            Persons.Add(person);
+			Context.Person.Add(person);
+			Context.SaveChanges();
         }
 
         internal void DeletePerson(Guid id)
         {
-            var Person = Persons.FirstOrDefault(x => x.Id == id);
-            Persons.Remove(Person);
-        }
+            var Person = Context.Person.FirstOrDefault(x => x.Id == id);
+            Context.Remove(Person);
+			Context.SaveChanges();
+		}
 
         public List<Person> GetPerson()
         {
-            return this.Persons;
+			return Context.Person.ToList();
         }
     }
 }
