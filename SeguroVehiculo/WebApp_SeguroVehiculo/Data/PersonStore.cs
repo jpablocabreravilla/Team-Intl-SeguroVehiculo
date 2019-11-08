@@ -40,6 +40,23 @@ namespace WebApp_SeguroVehiculo.Data
             });
         }
 
+        internal void EditPerson(Person person)
+        {
+            var currentperson = GetPersonById(person.Id);
+            currentperson.Id = person.Id;
+            currentperson.Name = person.Name;
+            currentperson.LastName = person.LastName;
+            currentperson.DocNum = person.DocNum;
+            currentperson.DocType = person.DocType;
+            currentperson.BirthDate = person.BirthDate;
+            currentperson.City = person.City;
+        }
+
+        internal Person GetPersonById(Guid id)
+        {
+            return Persons.FirstOrDefault(x => x.Id == id);
+        }
+
         internal void AddPerson(Person person)
         {
             Persons.Add(person);

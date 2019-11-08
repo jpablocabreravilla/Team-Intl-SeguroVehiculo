@@ -20,8 +20,13 @@ namespace WebApp_SeguroVehiculo.Pages.Persons
         [BindProperty]
         public Person Person { get; set; }
 
-        public IActionResult OnPostAsync()   //ADD
+        public IActionResult OnPostAsync()   
         {
+            if (!ModelState.IsValid) // Validacion de que no me mande el Modelo vacio y lo guarde asi
+            {
+                return Page();
+            } 
+            //ADD
             PersonStore.AddPerson(Person);
             return RedirectToPage("./Index");
         }

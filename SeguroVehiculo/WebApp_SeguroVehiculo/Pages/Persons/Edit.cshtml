@@ -1,11 +1,55 @@
 ﻿@page
 @model WebApp_SeguroVehiculo.Pages.Persons.EditModel
 @{
-    ViewData["Title"] = "Edit";
 }
 
-<h1>Edit</h1>
+<center><h1>Edit Customer</h1></center>
 
+<div class="row">
+    <form method="post" class="col s12">
+
+        <input hidden asp-for="Person.Id"/>  <!-- Aqui estoy persistiendo el id para que no me lo muestre nulo , el hidden me oculta el campo-->
+       
+        <div class="row">
+            <div class="input-field col s6">
+                <input asp-for="Person.Name" />
+                <span class="helper-text" data-error="wrong" data-success="right">Name</span>
+            </div>
+            <div class="input-field col s6">
+                <input asp-for="Person.LastName" />
+                <span class="helper-text" data-error="wrong" data-success="right">LastName</span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s6">
+                <input asp-for="Person.DocType" />
+                <span class="helper-text" data-error="wrong" data-success="right">DocType</span>
+            </div>
+            <div class="input-field col s6">
+                <input asp-for="Person.DocNum" />
+                <span class="helper-text" data-error="wrong" data-success="right">DocNum</span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s6">
+                <input asp-for="Person.City" />
+                <span class="helper-text" data-error="wrong" data-success="right">City</span>
+            </div>
+            <div class="input-field col s6">
+                <input asp-for="Person.BirthDate" />
+                <span class="helper-text" data-error="wrong" data-success="right">BirthDate</span>
+            </div>
+        </div>
+        <div class="row">
+        </div>
+        <br />
+        <div class="row">
+            <button class="waves-effect waves-light btn col s12 " type="submit">
+                Save
+            </button>
+        </div>
+    </form>
+</div>
 
 <br />
 <a asp-page="./Index">Return to list</a>
