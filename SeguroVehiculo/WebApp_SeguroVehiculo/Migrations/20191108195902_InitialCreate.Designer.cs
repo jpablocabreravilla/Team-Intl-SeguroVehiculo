@@ -10,7 +10,7 @@ using WebApp_SeguroVehiculo.Data;
 namespace WebApp_SeguroVehiculo.Migrations
 {
     [DbContext(typeof(SVContext))]
-    [Migration("20191108034610_InitialCreate")]
+    [Migration("20191108195902_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -41,6 +41,34 @@ namespace WebApp_SeguroVehiculo.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Person");
+                });
+
+            modelBuilder.Entity("WebApp_SeguroVehiculo.Models.Vehicle", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("Brand");
+
+                    b.Property<string>("Model");
+
+                    b.Property<Guid>("PersonId");
+
+                    b.Property<string>("Year");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("PersonId");
+
+                    b.ToTable("Vehicle");
+                });
+
+            modelBuilder.Entity("WebApp_SeguroVehiculo.Models.Vehicle", b =>
+                {
+                    b.HasOne("WebApp_SeguroVehiculo.Models.Person")
+                        .WithMany("Vehicles")
+                        .HasForeignKey("PersonId")
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
 #pragma warning restore 612, 618
         }

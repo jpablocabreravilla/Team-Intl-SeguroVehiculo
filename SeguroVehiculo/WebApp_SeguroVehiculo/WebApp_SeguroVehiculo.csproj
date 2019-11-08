@@ -15,7 +15,7 @@
 
 
   <ItemGroup>
-    <Folder Include="Pages\Vehicles\" />
+    <Folder Include="Migrations\" />
   </ItemGroup>
 
 </Project>

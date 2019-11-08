@@ -12,10 +12,14 @@ namespace WebApp_SeguroVehiculo.Models
             Id = Guid.NewGuid();
         }
         public Guid Id { get; set; }
-        public Guid PersonId { get; set; }
+
+        public Guid PersonId { get; set; } //FK para inner join con Person   ....  (Person 1...* Vehicle)
+
         public string Brand { get; set; }
+
         public string Model { get; set; }
         //public DateTime Year { get; set; }
+
         public string Year { get; set; }
     }
 }
