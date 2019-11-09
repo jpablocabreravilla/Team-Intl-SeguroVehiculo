@@ -17,7 +17,7 @@ namespace WebApp_SeguroVehiculo.Pages.Persons
         public IndexModel(PersonStore _personStore)
         {
             PersonStore = _personStore;
-            Persons = _personStore.GetPerson();
+            Persons = _personStore.GetPersons();
         }
 
         public IActionResult OnPostDelete(Guid id)

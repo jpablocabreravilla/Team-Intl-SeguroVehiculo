@@ -10,45 +10,43 @@
         <div class="row">
             <div class="input-field col s6">
                 <input asp-for="Person.Name" />
-                <span class="helper-text" data-error="wrong" data-success="right">Name</span>
+				<span class="helper-text text-secondary" data-error="wrong" data-success="right">Name</span>
             </div>
             <div class="input-field col s6">
                 <input asp-for="Person.LastName" />
-                <span class="helper-text" data-error="wrong" data-success="right">LastName</span>
+                <span class="helper-text text-secondary" data-error="wrong" data-success="right">LastName</span>
             </div>
         </div>
         <div class="row">
             <div class="input-field col s6">
                 <input asp-for="Person.DocType" />
-                <span class="helper-text" data-error="wrong" data-success="right">DocType</span>
+                <span class="helper-text text-secondary" data-error="wrong" data-success="right">DocType</span>
             </div>
             <div class="input-field col s6">
                 <input asp-for="Person.DocNum" />
-                <span class="helper-text" data-error="wrong" data-success="right">DocNum</span>
+                <span class="helper-text text-secondary" data-error="wrong" data-success="right">DocNum</span>
             </div>
         </div>
         <div class="row">
             <div class="input-field col s6">
                 <input asp-for="Person.City" />
-                <span class="helper-text" data-error="wrong" data-success="right">City</span>
+                <span class="helper-text text-secondary" data-error="wrong" data-success="right">City</span>
             </div>
             <div class="input-field col s6">
                 <input asp-for="Person.BirthDate" />
-                <span class="helper-text" data-error="wrong" data-success="right">BirthDate</span>
+                <span class="helper-text text-secondary" data-error="wrong" data-success="right">BirthDate</span>
             </div>
         </div>
         <div class="row">
         </div>
-        <br />
         <div class="row">
-            <button class="waves-effect waves-light btn col s12 " type="submit">
-                Save
+            <button class="waves-effect waves-light btn col s12 border-info" type="submit">
+				Save
             </button>
         </div>
     </form>
 </div>
 
-<br />
 <a asp-page="./Index">Return to list</a>
 
 

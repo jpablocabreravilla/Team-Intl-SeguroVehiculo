@@ -30,6 +30,7 @@ namespace WebApp_SeguroVehiculo.Pages.Persons
             PersonStore.AddPerson(Person);
             return RedirectToPage("./Index");
         }
+
         public void OnGet()
         {
         }

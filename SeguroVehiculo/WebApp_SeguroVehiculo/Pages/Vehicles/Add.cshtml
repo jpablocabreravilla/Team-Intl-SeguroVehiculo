@@ -1,8 +1,37 @@
 ﻿@page
 @model WebApp_SeguroVehiculo.Pages.Vehicles.AddModel
-@{
-    ViewData["Title"] = "Add";
-}
+@{}
 
-<h1>Add</h1>
+<center><h1>Add Vehicle</h1></center>
 
+<div class="row">
+	<form method="post" class="col s12">
+		<!--<input hidden asp-for="PersonId" />  no sirve por que yo primero cargo la listade informacion-->
+		<div class="row">
+			<div class="input-field col s6">
+				<input asp-for="Vehicle.Brand" />
+				<span class="helper-text text-secondary" data-error="wrong" data-success="right">Brand</span>
+			</div>
+			<div class="input-field col s6">
+				<input asp-for="Vehicle.Model" />
+				<span class="helper-text text-secondary" data-error="wrong" data-success="right">Model</span>
+			</div>
+		</div>
+		<div class="row">
+			<div class="input-field col s6">
+				<input asp-for="Vehicle.Year" />
+				<span class="helper-text text-secondary" data-error="wrong" data-success="right">Year</span>
+			</div>
+		</div>
+
+		<div class="row">
+		</div>
+
+		<div class="row">
+			<button class="waves-effect waves-light btn col s12 border-info" type="submit">
+				Save
+			</button>
+		</div>
+	</form>
+</div>
+<a asp-page="./Index">Return to list</a>

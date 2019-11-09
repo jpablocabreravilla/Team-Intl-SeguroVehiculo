@@ -39,6 +39,7 @@ namespace WebApp_SeguroVehiculo
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
 			services.AddScoped<PersonStore>();
+			services.AddScoped<VehicleStore>();
 
 			services.AddDbContext<SVContext>(opt =>
 			opt.UseSqlServer(Configuration.GetConnectionString("ConecctionSQL")));

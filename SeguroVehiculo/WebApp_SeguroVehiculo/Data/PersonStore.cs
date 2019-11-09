@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -50,9 +51,9 @@ namespace WebApp_SeguroVehiculo.Data
 			Context.SaveChanges();
 		}
 
-        public List<Person> GetPerson()
+        public List<Person> GetPersons()
         {
-			return Context.Person.ToList();
-        }
+			return Context.Person.Include(x => x.Vehicles).ToList();
+		}
     }
 }

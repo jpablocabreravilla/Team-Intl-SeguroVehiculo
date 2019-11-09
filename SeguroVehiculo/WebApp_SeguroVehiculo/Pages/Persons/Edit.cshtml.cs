@@ -12,6 +12,7 @@ namespace WebApp_SeguroVehiculo.Pages.Persons
     public class EditModel : PageModel
     {
         public PersonStore PersonStore { get; set; }
+
         public EditModel(PersonStore personStore)
         {
             PersonStore = personStore;
