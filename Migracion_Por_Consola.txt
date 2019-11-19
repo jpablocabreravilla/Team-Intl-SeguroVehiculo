@@ -1,0 +1,5 @@
+cd C:\Users\JuanPabloCabreraV\source\repos\Team-Intl-SeguroVehiculo\SeguroVehiculo\WebApp_SeguroVehiculo
+
+dotnet-ef migrations add InitialCreate
+
+update-database
