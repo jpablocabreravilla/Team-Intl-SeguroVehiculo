@@ -1,4 +1,4 @@
-cd C:\Users\JuanPabloCabreraV\source\repos\Team-Intl-SeguroVehiculo\SeguroVehiculo\WebApp_SeguroVehiculo
+cd C:\Users\JuanPabloCabreraV\source\repos\Team-Intl-SeguroVehiculo\TGL.WebAppTeamSeguros
 
 dotnet-ef migrations add InitialCreate
 
